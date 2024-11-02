@@ -17,4 +17,7 @@ cmp.setup {
     { name = "path" },
     { name = "cmdline" },
   },
+  formatting = {
+    format = require("tailwindcss-colorizer-cmp").formatter,
+  },
 }

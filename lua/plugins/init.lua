@@ -11,6 +11,12 @@ return {
     end,
   },
   {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require "configs.colorizer"
+    end,
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
@@ -20,6 +26,12 @@ return {
     },
     config = function()
       require "configs.cmp"
+    end,
+  },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup()
     end,
   },
 }

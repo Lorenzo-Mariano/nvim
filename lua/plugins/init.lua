@@ -22,17 +22,4 @@ return {
       require "configs.cmp"
     end,
   },
-  -- Uncomment this block if you want to include Treesitter
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = {
-  --     ensure_installed = {
-  --       "vim",
-  --       "lua",
-  --       "vimdoc",
-  --       "html",
-  --       "css",
-  --     },
-  --   },
-  -- },
 }

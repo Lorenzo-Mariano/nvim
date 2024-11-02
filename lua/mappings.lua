@@ -11,7 +11,7 @@ map({ "n", "t" }, "<C-j>", function()
   nvterm.toggle { pos = "float", id = "floatTerm" }
   end, { desc = "terminal toggle floating term" })
 map("i", "<C-Space>", function()
-  require("cmp").complete()
+  require("cmp").mapping.complete()
 end, { desc = "Trigger completion" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

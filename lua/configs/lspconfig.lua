@@ -20,17 +20,9 @@ lspconfig.emmet_language_server.setup({
   filetypes = {"html", "javascriptreact", "typescriptreact"}
 })
 
-lspconfig.tsserver.setup {
-  on_attach = function(client, bufnr)
-    -- Enable completion and diagnostics
-    require("cmp_nvim_lsp").setup()
-  end,
-  capabilities = require("cmp_nvim_lsp").default_capabilities()
-}
-
 -- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+lspconfig.ts_ls.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+}

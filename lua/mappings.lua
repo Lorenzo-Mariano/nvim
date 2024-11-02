@@ -1,6 +1,7 @@
 require "nvchad.mappings"
 local nvterm = require "nvchad.term"
-local cmp = require "lua/configs/cmp.lua"
+local cmp = require "cmp"
+
 -- add yours here
 
 local map = vim.keymap.set

@@ -34,4 +34,14 @@ return {
       require("tailwindcss-colorizer-cmp").setup()
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require "configs.treesitter"
+    end,
+    dependencies = {
+      { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
+    },
+    build = ":TSUpdate",
+  },
 }

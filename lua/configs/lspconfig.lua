@@ -17,7 +17,7 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.emmet_language_server.setup {
-  filetypes = { "html", "javascriptreact", "typescriptreact" },
+  filetypes = { "html", "javascriptreact", "typescriptreact", "blade" },
 }
 
 -- configuring single server, example: typescript

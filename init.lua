@@ -15,7 +15,6 @@ local lazy_config = require "configs.lazy"
 
 -- load plugins
 require("lazy").setup({
-  "akinsho/toggleterm.nvim",
   {
     "NvChad/NvChad",
     lazy = false,

@@ -5,6 +5,7 @@ local options = {
     html = { "prettier" },
     tsx = { "prettier" },
     jsx = { "prettier" },
+    c = { "clang_format" },
   },
 
   format_on_save = {

@@ -6,6 +6,8 @@ local options = {
     tsx = { "prettier" },
     jsx = { "prettier" },
     c = { "clang_format" },
+    json = { "prettier" },
+    php = { "pint" },
   },
 
   format_on_save = {

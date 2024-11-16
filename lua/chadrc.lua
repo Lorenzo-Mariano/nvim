@@ -20,11 +20,38 @@ M.nvdash = {
 }
 
 M.base46 = {
-  theme = "bearded-arc",
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
+  theme = "ayu_dark",
+  transparency = true,
+  -- Was trying to make the main bg trans, and the terms not.
+  -- Didn't really make it stick, but worth leaving here.
+
+  -- changed_themes = {
+  --   ayu_dark = {
+  --     base_16 = {
+  --       base00 = "",
+  --     },
+  --     base_30 = {
+  --       darker_black = "",
+  --       black = "",
+  --       one_bg2 = "",
+  --       -- light_grey = "#545351",
+  --       -- black2 = "#545351", -- from bg of terminal, famine eating pizza, with bg img opacity @ 20%
+  --       line = "#dddddd",
+  --       statusline_bg = "",
+  --     },
+  --   },
   -- },
+  hl_override = {
+    -- for some reason the var name doesn't always work, in
+    -- which case I am kinda forced to do below instead.
+    ["@comment"] = { fg = "#ffaf94", italic = true },
+
+    -- Line number on the side
+    LineNr = { fg = "#FFFED6" },
+
+    -- this does not seem to work, despite autocomplete
+    -- Comment = { fg = "teal", italic = true },
+  },
 }
 
 return M

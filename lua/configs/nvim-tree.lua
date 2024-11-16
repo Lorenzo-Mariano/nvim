@@ -10,6 +10,7 @@ nvim_tree.setup {
     update_root = false,
   },
   view = {
+    -- The one adjustment I made lol
     width = 35,
     preserve_window_proportions = true,
   },

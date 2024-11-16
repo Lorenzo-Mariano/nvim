@@ -2,9 +2,9 @@ local cmp = require "cmp"
 
 cmp.setup {
   completion = {
-    completeopt = "menu,menuone,noinsert",
+    completeopt = "menu,menuone",
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert {
     ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
     ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
     ["<C-Space>"] = cmp.mapping.complete(),

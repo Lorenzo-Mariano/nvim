@@ -2,8 +2,10 @@ local config = require "nvim-treesitter.configs"
 local parsers = require("nvim-treesitter.parsers").get_parser_configs()
 
 config.setup {
+  ensure_installed = { "typescript" },
   highlight = {
     enable = true,
+    additional_vim_regex_highlighting = { "sh" },
   },
 }
 

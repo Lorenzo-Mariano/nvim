@@ -20,8 +20,8 @@ M.nvdash = {
 }
 
 M.base46 = {
-  theme = "ayu_dark",
-  transparency = true,
+  theme = "gruvbox",
+  -- transparency = true,
   -- Was trying to make the main bg trans, and the terms not.
   -- Didn't really make it stick, but worth leaving here.
 
@@ -41,6 +41,8 @@ M.base46 = {
   --     },
   --   },
   -- },
+
+  -- use :highlight to list available options.
   hl_override = {
     -- for some reason the var name doesn't always work, in
     -- which case I am kinda forced to do below instead.
@@ -48,6 +50,13 @@ M.base46 = {
 
     -- Line number on the side
     LineNr = { fg = "#FFFED6" },
+
+    -- Float border used to be blue.
+    FloatBorder = { fg = "#474747" },
+
+    -- The lines that separate the panels.
+    WinSeparator = { fg = "#cdcdcd" },
+    NvimTreeWinSeparator = { fg = "#cdcdcd" },
 
     -- this does not seem to work, despite autocomplete
     -- Comment = { fg = "teal", italic = true },

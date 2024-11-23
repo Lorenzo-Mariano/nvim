@@ -38,4 +38,69 @@ return {
     },
     build = ":TSUpdate",
   },
+  {
+    "xiyaowong/transparent.nvim",
+    lazy = false,
+    config = function()
+      require("transparent").setup {
+        -- table: default groups
+        groups = {
+          "Normal",
+          "NormalNC",
+          "Comment",
+          "Constant",
+          "Special",
+          "Identifier",
+          "Statement",
+          "PreProc",
+          "Type",
+          "Underlined",
+          "Todo",
+          "String",
+          "Function",
+          "Conditional",
+          "Repeat",
+          "Operator",
+          "Structure",
+          "LineNr",
+          "NonText",
+          "SignColumn",
+          "CursorLine",
+          "CursorLineNr",
+          "StatusLine",
+          "StatusLineNC",
+          "EndOfBuffer",
+        },
+        -- table: additional groups that should be cleared
+        extra_groups = {
+          -- File tree crap
+          "NvimTreeNormal",
+          "NvimTreeNormalNC",
+          "NvimTreeEndOfBuffer",
+          "NvimTreeVertSplit",
+          "VertSplit",
+
+          -- Bufferline groups
+          "BufferLineFill",
+          "BufferLineBackground",
+          "BufferLineSeparator",
+          "BufferLineModified",
+          "BufferLineModifiedSelected",
+          "BufferLineTab",
+          "BufferLineTabSelected",
+          "BufferLineTabClose",
+          "BufferLineIndicatorSelected",
+
+          -- sariling gawa maybe
+          "TbFill", -- The thing that ain't the tabs specifically that spans the whole width of the buffer
+          "NvimTreeWinSeparator",
+        },
+        -- table: groups you don't want to clear
+        exclude_groups = {},
+        -- function: code to be executed after highlight groups are cleared
+        -- Also the user event "TransparentClear" will be triggered
+        on_clear = function() end,
+      }
+    end,
+  },
 }

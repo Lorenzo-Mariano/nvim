@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "tailwindcss", "clangd" }
+local servers = { "html", "cssls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -16,13 +16,17 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.emmet_language_server.setup {
-  filetypes = { "html", "javascriptreact", "typescriptreact", "blade" },
-}
-
 -- configuring single server, example: typescript
 lspconfig.ts_ls.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
 }
+
+lspconfig.emmet_language_server.setup {
+  filetypes = { "html", "javascriptreact", "typescriptreact", "blade" },
+}
+
+lspconfig.eslint.setup {}
+lspconfig.tailwindcss.setup {}
+lspconfig.intelephense.setup {}

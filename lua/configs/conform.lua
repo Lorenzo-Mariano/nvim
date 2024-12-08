@@ -7,14 +7,15 @@ local options = {
     jsx = { "prettier" },
     c = { "clang_format" },
     json = { "prettier" },
-    php = { "pint" },
-    yaml = { "prettier" }
+    -- php = { "pint" },
+    blade = { "pint" },
+    yaml = { "prettier" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true,
+    timeout_ms = 1000,
+    -- lsp_fallback = true,
   },
 }
 

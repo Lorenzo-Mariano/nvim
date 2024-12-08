@@ -28,5 +28,7 @@ lspconfig.emmet_language_server.setup {
 }
 
 lspconfig.eslint.setup {}
+lspconfig.jsonls.setup {}
+lspconfig.yamlls.setup {}
 lspconfig.tailwindcss.setup {}
 lspconfig.intelephense.setup {}

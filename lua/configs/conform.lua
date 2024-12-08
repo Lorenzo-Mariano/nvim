@@ -3,18 +3,22 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    tsx = { "prettier" },
+    js = { "prettier" },
+    javascriptreact = { "prettier" },
     jsx = { "prettier" },
+    typescript = { "prettier" },
+    typescriptreact = { "prettier" },
+    tsx = { "prettier" },
     c = { "clang_format" },
     json = { "prettier" },
-    -- php = { "pint" },
-    blade = { "pint" },
+    php = { "pint" },
+    blade = { "blade-formatter" },
     yaml = { "prettier" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 1000,
+    timeout_ms = 1500,
     -- lsp_fallback = true,
   },
 }

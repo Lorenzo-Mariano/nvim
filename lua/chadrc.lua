@@ -58,6 +58,11 @@ M.base46 = {
     WinSeparator = { fg = "#cdcdcd" },
     NvimTreeWinSeparator = { fg = "#cdcdcd" },
 
+    Visual = {
+      bg = "#476e70",
+      fg = "NONE"
+    }
+
     -- this does not seem to work, despite autocomplete
     -- Comment = { fg = "teal", italic = true },
   },

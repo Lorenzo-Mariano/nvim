@@ -8,6 +8,7 @@ local options = {
     c = { "clang_format" },
     json = { "prettier" },
     php = { "pint" },
+    yaml = { "prettier" }
   },
 
   format_on_save = {

@@ -8,10 +8,10 @@ local M = {}
 M.term = {
   float = {
     relative = "editor",
-    row = 0.125,
-    col = 0.275,
+    row = 0.125, -- half of screen height (1) - height then /2
+    col = 0.1, -- half of screen width (1) - width then /2
     height = 0.75,
-    width = 0.45,
+    width = 0.8,
   },
 }
 
@@ -60,8 +60,8 @@ M.base46 = {
 
     Visual = {
       bg = "#476e70",
-      fg = "NONE"
-    }
+      fg = "NONE",
+    },
 
     -- this does not seem to work, despite autocomplete
     -- Comment = { fg = "teal", italic = true },

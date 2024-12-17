@@ -13,6 +13,16 @@ return {
     end,
   },
   {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup {
+        user_default_options = {
+          tailwind = true,
+        },
+      }
+    end,
+  },
+  {
     "xiyaowong/transparent.nvim",
     lazy = false,
     config = function()

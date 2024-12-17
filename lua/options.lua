@@ -13,4 +13,4 @@ vim.opt.relativenumber = true
 -- vim.opt.shell = "C:/Users/loren/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Windows PowerShell/Windows PowerShell"
 
 -- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+-- o.cursorlineopt = "both" -- to enable cursorline!

@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -16,16 +16,28 @@ return {
     "xiyaowong/transparent.nvim",
     lazy = false,
     config = function()
-      require("transparent").setup {}
-    end
+      require("transparent").setup {
+        extra_groups = {
+          "NvimTreeNormal",
+          "NvimTreeNormalNC",
+          "NvimTreeNormalEndOfBuffer",
+          "NvimTreeVertSplit",
+          "VertSplit",
+          "NvimTreeWinSeparator",
+        },
+      }
+    end,
   },
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
-  		},
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+      },
+    },
   },
 }

@@ -5,6 +5,16 @@
 ---@type ChadrcConfig
 local M = {}
 
+M.term = {
+  float = {
+    relative = "editor",
+    row = 0.125,
+    col = 0.1,
+    height = 0.75,
+    width = 0.8,
+  },
+}
+
 M.base46 = {
   theme = "gruvbox",
 

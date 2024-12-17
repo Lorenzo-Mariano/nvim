@@ -23,6 +23,12 @@ return {
     end,
   },
   {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup()
+    end,
+  },
+  {
     "xiyaowong/transparent.nvim",
     lazy = false,
     config = function()

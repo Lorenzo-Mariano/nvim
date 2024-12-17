@@ -9,8 +9,11 @@ M.base46 = {
   theme = "gruvbox",
 
   hl_override = {
-    -- 	Comment = { italic = true },
+    -- Comment = { italic = true },
     ["@comment"] = { fg = "#ffaf94" },
+    LineNr = { fg = "#FFFED6" },
+    WinSeparator = { fg = "#cdcdcd" },
+    NvimTreeWinSeparator = { fg = "#cdcdcd" },
   },
 }
 

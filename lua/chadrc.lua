@@ -20,7 +20,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-  theme = "gruvbox",
+  theme = "doomchad",
 
   hl_override = {
     -- Comment = { italic = true },

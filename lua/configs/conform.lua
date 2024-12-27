@@ -12,6 +12,7 @@ local options = {
     json = { "prettier" },
     php = { "intelephense" },
     yaml = { "prettier" },
+    go = { "revive" },
   },
 
   format_on_save = {

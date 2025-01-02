@@ -9,4 +9,6 @@ map({ "n", "t" }, "<A-\\>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map("n", "ge", function()
+  vim.diagnostic.open_float { scope = "line" }
+end, { desc = "Show diagnostics for the current line" })

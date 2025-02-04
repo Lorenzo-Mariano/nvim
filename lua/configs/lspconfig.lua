@@ -7,16 +7,17 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html",
   "cssls",
-  "emmet_language_server",
   "ts_ls",
   "eslint",
   "jsonls",
+  "intelephense",
   "yamlls",
   "tailwindcss",
-  "intelephense",
   "gopls",
   "clangd",
   "pyright",
+  "prismals",
+  "emmet_language_server",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"

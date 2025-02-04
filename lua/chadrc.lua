@@ -5,6 +5,12 @@
 ---@type ChadrcConfig
 local M = {}
 
+M.ui = {
+  tabufline = {
+    enabled = false,
+  },
+}
+
 M.term = {
   float = {
     relative = "editor",

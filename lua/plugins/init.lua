@@ -6,6 +6,15 @@ return {
     opts = require "configs.nvimtree",
   },
   {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    cmd = "Telescope",
+    lazy = false,
+    opts = function()
+      return require "configs.telescope"
+    end,
+  },
+  {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",

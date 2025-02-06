@@ -12,3 +12,7 @@ end, { desc = "terminal toggle floating term" })
 map("n", "ge", function()
   vim.diagnostic.open_float { scope = "line" }
 end, { desc = "Show diagnostics for the current line" })
+
+map("n", "<A-s>", "<cmd>w<CR>", {
+  desc = "Other keybind to save file",
+})

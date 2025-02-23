@@ -16,3 +16,11 @@ end, { desc = "Show diagnostics for the current line" })
 map("n", "<A-s>", "<cmd>w<CR>", {
   desc = "Other keybind to save file",
 })
+
+-- turn off entering comments when entering new line
+vim.cmd "autocmd BufEnter * set formatoptions-=cro"
+vim.cmd "autocmd BufEnter * setlocal formatoptions-=cro"
+
+-- turn off cycling through tabs
+vim.keymap.del("n", "<Tab>")
+vim.keymap.del("n", "<S-Tab>")

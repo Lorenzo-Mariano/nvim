@@ -39,6 +39,10 @@ return {
 		config = true,
 	},
 	{
+		"numToStr/Comment.nvim",
+		opts = {},
+	},
+	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
@@ -97,16 +101,31 @@ return {
 		opts_extend = { "sources.default" },
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
 		lazy = false,
-		opts = {},
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("nvim-tree").setup({
+				view = {
+					width = 40,
+				},
+			})
+		end,
 	},
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	branch = "v3.x",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- 	lazy = false,
+	-- 	opts = {},
+	-- },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",

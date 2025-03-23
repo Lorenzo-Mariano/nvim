@@ -46,3 +46,6 @@ map("n", "<C-j>", "<C-w>j", opts)
 
 -- Toggle Neotree
 map("n", "<C-b>", ":Neotree toggle<CR>", opts)
+
+-- Toggle NvimTree
+map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)

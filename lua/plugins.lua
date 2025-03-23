@@ -1,5 +1,16 @@
 return {
 	{
+		"sainnhe/gruvbox-material",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.gruvbox_material_enable_italic = true
+			vim.cmd.colorscheme("gruvbox-material")
+		end,
+	},
+	{
 		"williamboman/mason.nvim",
 		config = function()
 			require("mason").setup()
@@ -155,7 +166,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
-			require("lualine").setup({ options = { theme = "everforest", ignore_focus = "neo-tree" } })
+			require("lualine").setup({ options = { theme = "gruvbox_material", ignore_focus = "neo-tree" } })
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},

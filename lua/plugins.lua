@@ -45,6 +45,11 @@ return {
 		end,
 	},
 	{
+		"akinsho/git-conflict.nvim",
+		version = "*",
+		config = true,
+	},
+	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
 		cmd = "Telescope",

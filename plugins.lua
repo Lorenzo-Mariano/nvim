@@ -13,7 +13,6 @@ return {
 				ensure_installed = { "lua_ls" },
 				automatic_installation = true,
 			})
-
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
@@ -33,6 +32,17 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
 	},
 	{
 		"nvim-telescope/telescope.nvim",

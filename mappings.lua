@@ -11,6 +11,9 @@ map("n", ";", ":", { noremap = true })
 -- Alt + S to save file
 map("n", "<M-s>", ":w<CR>", opts)
 
+-- Hit ge to show the lsp error
+vim.keymap.set("n", "ge", vim.diagnostic.open_float, { noremap = true, silent = true })
+
 -- Use "p" to paste from the system clipboard
 vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })

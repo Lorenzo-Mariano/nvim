@@ -6,6 +6,31 @@ return {
 		end,
 	},
 	{
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = { "neovim/nvim-lspconfig" },
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = { "lua_ls" },
+				automatic_installation = true,
+			})
+
+			require("mason-lspconfig").setup_handlers({
+				function(server_name)
+					require("lspconfig")[server_name].setup({})
+				end,
+				["lua_ls"] = function()
+					require("lspconfig").lua_ls.setup({
+						settings = {
+							Lua = {
+								diagnostics = { globals = { "vim" } },
+							},
+						},
+					})
+				end,
+			})
+		end,
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
@@ -38,6 +63,23 @@ return {
 				},
 			})
 		end,
+	},
+	{
+		"saghen/blink.cmp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "*",
+		opts = {
+			keymap = { preset = "default" },
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
+
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+		opts_extend = { "sources.default" },
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -75,6 +117,13 @@ return {
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("lualine").setup({ options = { theme = "everforest", ignore_focus = "neo-tree" } })
+		end,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
 		"xiyaowong/transparent.nvim",

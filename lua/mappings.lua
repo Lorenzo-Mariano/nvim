@@ -48,8 +48,8 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-b>", ":Neotree toggle<CR>", opts)
 
 -- Toggle NvimTree
-map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+-- map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 
--- Scroll exactly 5 lines instead of half a screen
-vim.api.nvim_set_keymap("n", "<C-U>", "5k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-D>", "5j", { noremap = true, silent = true })
+-- Scroll 5 lines
+vim.api.nvim_set_keymap("n", "<C-U>", "5<C-Y>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-D>", "5<C-E>", { noremap = true, silent = true })

@@ -102,9 +102,12 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
+					javascript = { "prettierd" },
+					typescript = { "prettierd" },
+					typescriptreact = { "prettierd" },
 				},
 				format_on_save = {
-					timeout_ms = 500,
+					timeout_ms = 1000,
 					-- lsp_format = "fallback",
 				},
 			})
@@ -127,32 +130,32 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("nvim-tree").setup({
-				view = {
-					width = 40,
-				},
-			})
-		end,
-	},
 	-- {
-	-- 	"nvim-neo-tree/neo-tree.nvim",
-	-- 	branch = "v3.x",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 		"MunifTanjim/nui.nvim",
-	-- 	},
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	version = "*",
 	-- 	lazy = false,
-	-- 	opts = {},
+	-- 	dependencies = {
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	config = function()
+	-- 		require("nvim-tree").setup({
+	-- 			view = {
+	-- 				width = 40,
+	-- 			},
+	-- 		})
+	-- 	end,
 	-- },
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+		lazy = false,
+		opts = {},
+	},
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",

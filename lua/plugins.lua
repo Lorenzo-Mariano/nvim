@@ -184,9 +184,25 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("lualine").setup({ options = { theme = "gruvbox_material", ignore_focus = "neo-tree" } })
-		end,
+		opts = {
+			sections = {
+				lualine_c = {
+					{
+						"filename",
+						file_status = true,
+						newfile_status = false,
+						path = 1,
+						shorting_target = 40,
+						symbols = {
+							modified = "[+]",
+							readonly = "[-]",
+							unnamed = "[No Name]",
+							newfile = "[New]",
+						},
+					},
+				},
+			},
+		},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{

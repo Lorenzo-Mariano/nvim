@@ -21,7 +21,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
-	spec = require("plugins"),
+	spec = {
+		require("plugins.ui"),
+		require("plugins.editing"),
+		require("plugins.utils"),
+	},
 	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },

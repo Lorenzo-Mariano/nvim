@@ -50,6 +50,9 @@ map("n", "<C-b>", ":Neotree toggle<CR>", opts)
 -- Toggle NvimTree
 -- map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 
--- Scroll 5 lines
+-- Scroll 5 lines, normal and visual
 vim.api.nvim_set_keymap("n", "<C-U>", "5<C-Y>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-D>", "5<C-E>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("v", "<C-U>", "5k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-D>", "5j", { noremap = true, silent = true })

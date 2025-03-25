@@ -34,6 +34,13 @@ return {
 		tag = "0.1.8",
 		cmd = "Telescope",
 		lazy = false,
+		opts = {
+			defaults = {
+				layout_config = {
+					preview_width = 0.5,
+				},
+			},
+		},
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{

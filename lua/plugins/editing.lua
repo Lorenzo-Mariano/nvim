@@ -21,10 +21,10 @@ return {
 					javascript = { "prettierd" },
 					typescript = { "prettierd" },
 					typescriptreact = { "prettierd" },
+					cs = { "csharpier" },
 				},
 				format_on_save = {
-					timeout_ms = 1000,
-					-- lsp_format = "fallback",
+					timeout_ms = 1500,
 				},
 			})
 		end,
@@ -34,6 +34,7 @@ return {
 		dependencies = { "rafamadriz/friendly-snippets" },
 		version = "*",
 		opts = {
+			-- I want to be able to hit enter without inserting a line break
 			keymap = {
 				["<C-u>"] = {
 					function(cmp)

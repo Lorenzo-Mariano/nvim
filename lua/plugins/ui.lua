@@ -33,7 +33,16 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 		lazy = false,
-		opts = {},
+
+		config = function()
+			require("neo-tree").setup({
+				window = {
+					mappings = {
+						["<c-b>"] = "noop",
+					},
+				},
+			})
+		end,
 	},
 	{
 		"folke/noice.nvim",
@@ -80,6 +89,12 @@ return {
 						},
 					},
 				},
+			},
+			extensions = {
+				"lazy",
+				"mason",
+				"neo-tree",
+				"toggleterm",
 			},
 		},
 		dependencies = { "nvim-tree/nvim-web-devicons" },

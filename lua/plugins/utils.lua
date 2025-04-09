@@ -9,7 +9,7 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
-			local servers = { "ts_ls", "yamlls" }
+			local servers = { "ts_ls", "yamlls", "eslint" }
 			for _, lsp in ipairs(servers) do
 				lspconfig[lsp].setup({})
 			end
@@ -53,23 +53,23 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
-	{
-		"mfussenegger/nvim-lint",
-		config = function()
-			require("lint").linters_by_ft = {
-				javascript = { "eslint_d" },
-				typescript = { "eslint_d" },
-				javascriptreact = { "eslint_d" },
-				typescriptreact = { "eslint_d" },
-			}
-
-			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
-				callback = function()
-					require("lint").try_lint()
-				end,
-			})
-		end,
-	},
+	-- {
+	-- 	"mfussenegger/nvim-lint",
+	-- 	config = function()
+	-- 		require("lint").linters_by_ft = {
+	-- 			javascript = { "eslint_d" },
+	-- 			typescript = { "eslint_d" },
+	-- 			javascriptreact = { "eslint_d" },
+	-- 			typescriptreact = { "eslint_d" },
+	-- 		}
+	--
+	-- 		vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+	-- 			callback = function()
+	-- 				require("lint").try_lint()
+	-- 			end,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",

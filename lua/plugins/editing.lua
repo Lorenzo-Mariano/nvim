@@ -22,6 +22,7 @@ return {
 					typescript = { "prettierd" },
 					typescriptreact = { "prettierd" },
 					cs = { "csharpier" },
+					yaml = { "prettierd" },
 				},
 				format_on_save = {
 					timeout_ms = 1500,

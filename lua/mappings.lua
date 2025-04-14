@@ -47,7 +47,11 @@ map("n", "<C-j>", "<C-w>j", opts)
 -- Toggle Neotree
 map("n", "<C-b>", ":Neotree toggle<CR>", opts)
 
+<<<<<<< HEAD
 -- Scroll 8 lines, normal and visual
+=======
+-- Scroll 5 lines, normal and visual
+>>>>>>> 5965ca56467b5ad19289692941ec2d520ac1c7fd
 vim.api.nvim_set_keymap("n", "<C-U>", "8<C-Y>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-D>", "8<C-E>", { noremap = true, silent = true })
 

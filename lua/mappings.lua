@@ -6,7 +6,8 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- make ; open command mode
-map("n", ";", ":", { noremap = true })
+-- commented this out so that ; can repeat f + char keybind, and others.
+-- map("n", ";", ":", { noremap = true })
 
 -- Alt + S to save file
 map("n", "<M-s>", ":w<CR>", opts)
@@ -44,19 +45,25 @@ map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 
+-- Move splits around
+map("n", "<leader>H", "<C-w>H", opts)
+map("n", "<leader>L", "<C-w>L", opts)
+map("n", "<leader>K", "<C-w>K", opts)
+map("n", "<leader>J", "<C-w>J", opts)
+
 -- Toggle Neotree
 map("n", "<C-b>", ":Neotree toggle<CR>", opts)
 
-<<<<<<< HEAD
--- Scroll 8 lines, normal and visual
-=======
--- Scroll 5 lines, normal and visual
->>>>>>> 5965ca56467b5ad19289692941ec2d520ac1c7fd
-vim.api.nvim_set_keymap("n", "<C-U>", "8<C-Y>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-D>", "8<C-E>", { noremap = true, silent = true })
+-- Scroll 10 lines, normal and visual
+-- M at tne end to keep cursor centered as well
+vim.api.nvim_set_keymap("n", "<C-U>", "10<C-Y>M", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-D>", "10<C-E>M", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("v", "<C-U>", "8k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<C-D>", "8j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-U>", "10k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-D>", "10j", { noremap = true, silent = true })
 
 -- experimental fold stuff
-vim.api.nvim_set_keymap("n", "zf", "v%zf", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "zf", "v%zfzz", { noremap = true, silent = true })
+
+-- select the whole buffer real quick
+vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true, silent = true })

@@ -9,10 +9,6 @@ return {
 		config = true,
 	},
 	{
-		"numToStr/Comment.nvim",
-		opts = {},
-	},
-	{
 		"stevearc/conform.nvim",
 		config = function()
 			require("conform").setup({
@@ -21,8 +17,9 @@ return {
 					javascript = { "prettierd" },
 					typescript = { "prettierd" },
 					typescriptreact = { "prettierd" },
-					cs = { "csharpier" },
 					yaml = { "prettierd" },
+					json = { "prettierd" },
+					cs = { "csharpier" },
 				},
 				format_on_save = {
 					timeout_ms = 1500,
@@ -35,7 +32,6 @@ return {
 		dependencies = { "rafamadriz/friendly-snippets" },
 		version = "*",
 		opts = {
-			-- I want to be able to hit enter without inserting a line break
 			keymap = {
 				["<C-u>"] = {
 					function(cmp)

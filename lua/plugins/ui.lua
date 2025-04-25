@@ -8,12 +8,36 @@ return {
 		},
 	},
 	{
-		"xiyaowong/transparent.nvim",
-		lazy = false,
+		"Yazeed1s/oh-lucy.nvim",
 		config = function()
-			require("transparent").clear_prefix("Neotree")
+			vim.cmd([[colorscheme oh-lucy-evening]])
 		end,
 	},
+	-- {
+	-- 	"everviolet/nvim",
+	-- 	name = "evergarden",
+	-- 	config = function()
+	-- 		require("evergarden").setup({
+	-- 			theme = {
+	-- 				variant = "winter", -- 'winter'|'fall'|'spring'|'summer'
+	-- 				accent = "green",
+	-- 			},
+	-- 			editor = {
+	-- 				transparent_background = false,
+	-- 				sign = { color = "none" },
+	-- 				float = {
+	-- 					color = "mantle",
+	-- 					invert_border = false,
+	-- 				},
+	-- 				completion = {
+	-- 					color = "surface0",
+	-- 				},
+	-- 			},
+	-- 		})
+	--
+	-- 		vim.cmd([[colorscheme evergarden]])
+	-- 	end,
+	-- },
 	{
 		"sainnhe/gruvbox-material",
 		lazy = false,

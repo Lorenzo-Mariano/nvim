@@ -2,7 +2,7 @@ return {
 	{
 		"sphamba/smear-cursor.nvim",
 		opts = {
-			stiffness = 0.8,
+			stiffness = 0.9,
 			trailing_stiffness = 0.5,
 			distance_stop_animating = 0.1,
 		},
@@ -11,7 +11,7 @@ return {
 		"xiyaowong/transparent.nvim",
 		lazy = false,
 		config = function()
-			require("transparent")
+			require("transparent").clear_prefix("Neotree")
 		end,
 	},
 	{
@@ -89,6 +89,17 @@ return {
 						},
 					},
 				},
+				lualine_x = {
+					function()
+						local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+						if #clients == 0 then
+							return "No LSP"
+						end
+						return clients[1].name
+					end,
+					"encoding",
+					"filetype",
+				},
 			},
 			extensions = {
 				"lazy",
@@ -99,4 +110,18 @@ return {
 		},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	-- {
+	-- 	"Isrothy/neominimap.nvim",
+	-- 	version = "v3.x.x",
+	-- 	lazy = false,
+	-- 	init = function()
+	-- 		vim.g.neominimap = {
+	-- 			layout = "split",
+	-- 			auto_enable = true,
+	-- 			split = {
+	-- 				minimap_width = 12,
+	-- 			},
+	-- 		}
+	-- 	end,
+	-- },
 }

@@ -2,6 +2,12 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		config = function()
+			-- I FINALLY FIGURED IT OUT!!!
+			-- TURNS OUT THE SYNTAX HIGHLIGHTING WAS ALWAYS WONKY BECAUSE
+			-- IT WAS NEVER FUNKING ON WHEN I HTOUGHT IT WAS!!!!
+			vim.cmd("TSEnable highlight")
+		end,
 	},
 	{
 		"windwp/nvim-autopairs",

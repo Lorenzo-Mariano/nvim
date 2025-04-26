@@ -38,6 +38,7 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find f
 vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "Telescope select theme" })
 
 -- Move focus
 map("n", "<C-h>", "<C-w>h", opts)
@@ -54,13 +55,12 @@ map("n", "<leader>J", "<C-w>J", opts)
 -- Toggle Neotree
 map("n", "<C-b>", ":Neotree toggle<CR>", opts)
 
--- Scroll 10 lines, normal and visual
--- M at tne end to keep cursor centered as well
-vim.api.nvim_set_keymap("n", "<C-U>", "10<C-Y>M", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-D>", "10<C-E>M", { noremap = true, silent = true })
+-- Scroll 10 lines, normal and visual, then center cursor
+vim.api.nvim_set_keymap("n", "<C-U>", "10kzz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-D>", "10jzz", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("v", "<C-U>", "10k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<C-D>", "10j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-U>", "10kzz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-D>", "10jzz", { noremap = true, silent = true })
 
 -- experimental fold stuff
 vim.api.nvim_set_keymap("n", "zf", "v%zfzz", { noremap = true, silent = true })

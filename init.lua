@@ -25,6 +25,7 @@ require("lazy").setup({
 		require("plugins.ui"),
 		require("plugins.editing"),
 		require("plugins.utils"),
+		require("plugins.themes"),
 	},
 	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates

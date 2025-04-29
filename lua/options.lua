@@ -26,3 +26,5 @@ vim.opt.autoindent = true
 -- When scrolling, keeps the cursor a lil' more centered
 -- commented because of change to <C-D> and <C-U> keybinds
 -- vim.opt.scrolloff = 8
+
+vim.opt.termguicolors = true

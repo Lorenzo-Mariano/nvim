@@ -1,59 +1,5 @@
 return {
 	{
-		"sphamba/smear-cursor.nvim",
-		opts = {
-			stiffness = 0.9,
-			trailing_stiffness = 0.5,
-			distance_stop_animating = 0.1,
-		},
-	},
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-		lazy = false,
-
-		config = function()
-			require("neo-tree").setup({
-				window = {
-					mappings = {
-						["<c-b>"] = "noop",
-					},
-				},
-			})
-		end,
-	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			lsp = {
-				-- signature = {
-				-- 	enabled = false, -- to stop it from covering my whole face when typing
-				-- },
-				override = {
-					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true,
-				},
-			},
-			presets = {
-				bottom_search = true,
-				command_palette = true,
-				long_message_to_split = true,
-				inc_rename = false,
-				lsp_doc_border = true,
-			},
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
 			local function get_configured_linters()
@@ -79,6 +25,13 @@ return {
 			end
 
 			require("lualine").setup({
+				options = {
+					globalstatus = true,
+				},
+				tabline = {
+					lualine_a = { "buffers" },
+					lualine_z = { "tabs" },
+				},
 				sections = {
 					lualine_c = {
 						{
@@ -117,5 +70,65 @@ return {
 			})
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {
+			stiffness = 0.9,
+			trailing_stiffness = 0.5,
+			distance_stop_animating = 0.1,
+		},
+	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+		lazy = false,
+
+		config = function()
+			require("neo-tree").setup({
+				default_component_configs = {
+					indent = {
+						indent_size = 4,
+					},
+				},
+				window = {
+					width = 50,
+					mappings = {
+						["<c-b>"] = "noop",
+					},
+				},
+			})
+		end,
+	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			lsp = {
+				-- signature = {
+				-- 	enabled = false, -- to stop it from covering my whole face when typing
+				-- },
+				override = {
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					["vim.lsp.util.stylize_markdown"] = true,
+					["cmp.entry.get_documentation"] = true,
+				},
+			},
+			presets = {
+				bottom_search = true,
+				command_palette = true,
+				long_message_to_split = true,
+				inc_rename = false,
+				lsp_doc_border = true,
+			},
+		},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
 	},
 }

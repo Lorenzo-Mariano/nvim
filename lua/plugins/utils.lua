@@ -5,6 +5,12 @@ return {
 			require("mason").setup()
 		end,
 	},
+	{
+		"razak17/tailwind-fold.nvim",
+		opts = {},
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		ft = { "html", "svelte", "astro", "vue", "typescriptreact", "php", "blade" },
+	},
 	-- {
 	-- 	"neovim/nvim-lspconfig",
 	-- 	config = function()
@@ -59,7 +65,9 @@ return {
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
-			require("lint").linters_by_ft = {
+			local lint = require("lint")
+
+			lint.linters_by_ft = {
 				-- configs
 				yaml = { "yamllint" },
 				sh = { "dotenv_linter" },
@@ -76,6 +84,17 @@ return {
 				scss = { "stylelint" },
 				sass = { "stylelint" },
 			}
+
+			-- Wrap and override eslint_d parser to suppress config file missing error
+			local eslint_d = require("lint.linters.eslint_d")
+			local original_parser = eslint_d.parser
+
+			eslint_d.parser = function(output, bufnr)
+				if output:match("Could not find config file") then
+					return {}
+				end
+				return original_parser(output, bufnr)
+			end
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
 				callback = function()

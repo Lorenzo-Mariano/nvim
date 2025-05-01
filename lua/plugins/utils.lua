@@ -12,30 +12,6 @@ return {
 		ft = { "html", "svelte", "astro", "vue", "typescriptreact", "php", "blade" },
 	},
 	-- {
-	-- 	"neovim/nvim-lspconfig",
-	-- 	config = function()
-	-- 		local lspconfig = require("lspconfig")
-	-- 		local servers = { "ts_ls", "yamlls", "eslint" }
-	-- 		for _, lsp in ipairs(servers) do
-	-- 			lspconfig[lsp].setup({})
-	-- 		end
-	--
-	-- 		lspconfig.omnisharp.setup({
-	-- 			cmd = {
-	-- 				"dotnet",
-	-- 				vim.fn.expand(
-	-- 					"C:/Users/Nyormensho/AppData/Local/nvim-data/mason/packages/omnisharp/libexec/OmniSharp.dll"
-	-- 				),
-	-- 			},
-	-- 			root_dir = lspconfig.util.root_pattern("*.sln", ".git"),
-	-- 			settings = {
-	-- 				RoslynExtensionsOptions = { EnableImportCompletion = true },
-	-- 				MsBuild = { LoadProjectsOnDemand = false },
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
-	-- {
 	-- 	"github/copilot.vim",
 	-- },
 	{
@@ -46,16 +22,35 @@ return {
 				ensure_installed = { "lua_ls" },
 				automatic_installation = true,
 			})
+
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
 				end,
+
 				["lua_ls"] = function()
 					require("lspconfig").lua_ls.setup({
 						settings = {
 							Lua = {
 								diagnostics = { globals = { "vim" } },
 							},
+						},
+					})
+				end,
+
+				["omnisharp"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.omnisharp.setup({
+						cmd = {
+							"dotnet",
+							vim.fn.expand(
+								"C:/Users/Nyormensho/AppData/Local/nvim-data/mason/packages/omnisharp/libexec/OmniSharp.dll"
+							),
+						},
+						root_dir = lspconfig.util.root_pattern("*.sln", ".git"),
+						settings = {
+							RoslynExtensionsOptions = { EnableImportCompletion = true },
+							MsBuild = { LoadProjectsOnDemand = false },
 						},
 					})
 				end,

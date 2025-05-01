@@ -52,6 +52,11 @@ map("n", "<leader>L", "<C-w>L", opts)
 map("n", "<leader>K", "<C-w>K", opts)
 map("n", "<leader>J", "<C-w>J", opts)
 
+-- buffer stuff, kill, next, prev
+map("n", "<leader>bd", ":bd<CR>", opts)
+map("n", "<leader>br", ":bnext<CR>", opts)
+map("n", "<leader>bl", ":bprevious<CR>", opts)
+
 -- Toggle Neotree
 map("n", "<C-b>", ":Neotree toggle<CR>", opts)
 

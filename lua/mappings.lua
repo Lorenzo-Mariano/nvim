@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local builtin = require("telescope.builtin")
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
@@ -33,13 +32,6 @@ vim.opt.tabstop = 4
 -- When pressing <Tab> in insert mode, insert spaces instead of a tab character
 vim.opt.softtabstop = 4
 
--- Telescope stuff
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "Telescope select theme" })
-
 -- Move focus
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
@@ -54,11 +46,8 @@ map("n", "<leader>J", "<C-w>J", opts)
 
 -- buffer stuff, kill, next, prev
 map("n", "<leader>bd", ":bd<CR>", opts)
-map("n", "<leader>br", ":bnext<CR>", opts)
-map("n", "<leader>bl", ":bprevious<CR>", opts)
-
--- Toggle Neotree
-map("n", "<C-b>", ":Neotree toggle<CR>", opts)
+map("n", "<leader>l", ":bnext<CR>", opts)
+map("n", "<leader>h", ":bprevious<CR>", opts)
 
 -- Scroll 10 lines, normal and visual, then center cursor
 vim.api.nvim_set_keymap("n", "<C-U>", "10kzz", { noremap = true, silent = true })

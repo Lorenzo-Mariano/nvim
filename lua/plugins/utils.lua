@@ -11,9 +11,57 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		ft = { "html", "svelte", "astro", "vue", "typescriptreact", "php", "blade" },
 	},
-	-- {
-	-- 	"github/copilot.vim",
-	-- },
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				filetypes = {
+					sh = function()
+						if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
+							return false
+						end
+						return true
+					end,
+				},
+			})
+		end,
+	},
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" },
+			{ "nvim-lua/plenary.nvim", branch = "master" },
+		},
+		config = function()
+			require("CopilotChat").setup({
+				model = "claude-3.7-sonnet", -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
+				selection = function(source)
+					local select = require("CopilotChat.select")
+					return select.visual(source)
+				end,
+				window = {
+					layout = "float",
+					height = 0.75,
+					width = 0.75,
+				},
+				mappings = {
+					submit_prompt = {
+						normal = "<M-s>",
+						insert = "<M-s>",
+					},
+					reset = {
+						normal = "<C-x>",
+						insert = "<C-x>",
+					},
+				},
+			})
+
+			local map = vim.api.nvim_set_keymap
+			map("n", "<leader>cc", ":CopilotChatToggle<CR>", { noremap = true, silent = true })
+		end,
+	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "neovim/nvim-lspconfig" },
@@ -98,6 +146,7 @@ return {
 			})
 		end,
 	},
+	{ "nvim-telescope/telescope-ui-select.nvim" },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
@@ -110,6 +159,16 @@ return {
 				},
 			},
 		},
+		config = function()
+			require("telescope").load_extension("ui-select")
+
+			local builtin = require("telescope.builtin")
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+			vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+			vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "Telescope select theme" })
+		end,
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{

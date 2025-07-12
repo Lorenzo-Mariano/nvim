@@ -10,7 +10,9 @@ return {
 	{
 		"tinted-theming/tinted-vim",
 		config = function()
-			vim.cmd.colorscheme("base16-horizon-dark")
+			vim.cmd.colorscheme("base16-everforest-dark-hard") -- for mori
+			-- vim.cmd.colorscheme("base16-phd") -- for furina blue
+			-- vim.cmd.colorscheme("base16-horizon-dark") -- for calli pink
 
 			-- below doesn't work for some reason. taken straight from the docs.
 			-- (hence the plugin above)

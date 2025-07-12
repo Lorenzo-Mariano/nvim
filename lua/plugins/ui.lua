@@ -97,12 +97,16 @@ return {
 					},
 				},
 				window = {
-					width = 50,
+					width = 70,
 					mappings = {
 						["<c-b>"] = "noop",
 					},
 				},
 			})
+
+			local map = vim.api.nvim_set_keymap
+			-- map("n", "<C-b>", ":Neotree toggle position=float<CR>", { noremap = true, silent = true })
+			map("n", "<C-b>", ":Neotree toggle<CR>", { noremap = true, silent = true })
 		end,
 	},
 	{
@@ -110,9 +114,9 @@ return {
 		event = "VeryLazy",
 		opts = {
 			lsp = {
-				-- signature = {
-				-- 	enabled = false, -- to stop it from covering my whole face when typing
-				-- },
+				signature = {
+					enabled = false, -- to stop it from covering my whole face when typing
+				},
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 					["vim.lsp.util.stylize_markdown"] = true,

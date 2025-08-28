@@ -10,7 +10,11 @@ return {
 	{
 		"tinted-theming/tinted-vim",
 		config = function()
+			-- vim.cmd.colorscheme("base16-ayu-mirage") -- for mori
+			-- vim.cmd.colorscheme("base16-sandcastle") -- for mori
 			vim.cmd.colorscheme("base16-everforest-dark-hard") -- for mori
+
+			-- Other themes
 			-- vim.cmd.colorscheme("base16-phd") -- for furina blue
 			-- vim.cmd.colorscheme("base16-horizon-dark") -- for calli pink
 

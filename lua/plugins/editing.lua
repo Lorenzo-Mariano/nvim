@@ -32,9 +32,13 @@ return {
 					yaml = { "prettierd" },
 					json = { "prettierd" },
 					cs = { "csharpier" },
+
+					-- Installed globally via composer, not mason.
+					-- I'm facing problems because "composer.bat is not executable" <- mason
+					php = { "pint" },
 				},
 				format_on_save = {
-					timeout_ms = 1500,
+					timeout_ms = 1400,
 				},
 			})
 		end,
@@ -81,5 +85,25 @@ return {
 			},
 		},
 		opts_extend = { "sources.default" },
+	},
+	{
+		"adalessa/laravel.nvim",
+		dependencies = {
+			"tpope/vim-dotenv",
+			"nvim-telescope/telescope.nvim",
+			"MunifTanjim/nui.nvim",
+			"kevinhwang91/promise-async",
+		},
+		cmd = { "Laravel" },
+		keys = {
+			{ "<leader>la", ":Laravel artisan<cr>" },
+			{ "<leader>lr", ":Laravel routes<cr>" },
+			{ "<leader>lm", ":Laravel related<cr>" },
+		},
+		event = { "VeryLazy" },
+		opts = {
+			lsp_server = "intelephense",
+		},
+		config = true,
 	},
 }

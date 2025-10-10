@@ -31,15 +31,23 @@ return {
 					typescriptreact = { "prettierd" },
 					yaml = { "prettierd" },
 					json = { "prettierd" },
+					css = { "prettierd" },
 					cs = { "csharpier" },
 
 					-- Installed globally via composer, not mason.
 					-- I'm facing problems because "composer.bat is not executable" <- mason
 					php = { "pint" },
+					blade = { "blade-formatter" },
 				},
-				format_on_save = {
-					timeout_ms = 1400,
-				},
+				format_after_save = function(bufnr)
+					if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+						return
+					end
+					return { lsp_format = "fallback" }
+				end,
+				-- format_on_save = {
+				-- 	timeout_ms = 1400,
+				-- },
 			})
 		end,
 	},
@@ -86,24 +94,24 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
-	{
-		"adalessa/laravel.nvim",
-		dependencies = {
-			"tpope/vim-dotenv",
-			"nvim-telescope/telescope.nvim",
-			"MunifTanjim/nui.nvim",
-			"kevinhwang91/promise-async",
-		},
-		cmd = { "Laravel" },
-		keys = {
-			{ "<leader>la", ":Laravel artisan<cr>" },
-			{ "<leader>lr", ":Laravel routes<cr>" },
-			{ "<leader>lm", ":Laravel related<cr>" },
-		},
-		event = { "VeryLazy" },
-		opts = {
-			lsp_server = "intelephense",
-		},
-		config = true,
-	},
+	-- {
+	-- 	"adalessa/laravel.nvim",
+	-- 	dependencies = {
+	-- 		"tpope/vim-dotenv",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"kevinhwang91/promise-async",
+	-- 	},
+	-- 	cmd = { "Laravel" },
+	-- 	keys = {
+	-- 		{ "<leader>la", ":Laravel artisan<cr>" },
+	-- 		{ "<leader>lr", ":Laravel routes<cr>" },
+	-- 		{ "<leader>lm", ":Laravel related<cr>" },
+	-- 	},
+	-- 	event = { "VeryLazy" },
+	-- 	opts = {
+	-- 		lsp_server = "intelephense",
+	-- 	},
+	-- 	config = true,
+	-- },
 }

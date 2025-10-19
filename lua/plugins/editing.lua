@@ -42,9 +42,6 @@ return {
 				format_after_save = {
 					lsp_format = "fallback",
 				},
-				-- format_on_save = {
-				-- 	timeout_ms = 1400,
-				-- },
 			})
 		end,
 	},
@@ -91,24 +88,4 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
-	-- {
-	-- 	"adalessa/laravel.nvim",
-	-- 	dependencies = {
-	-- 		"tpope/vim-dotenv",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"kevinhwang91/promise-async",
-	-- 	},
-	-- 	cmd = { "Laravel" },
-	-- 	keys = {
-	-- 		{ "<leader>la", ":Laravel artisan<cr>" },
-	-- 		{ "<leader>lr", ":Laravel routes<cr>" },
-	-- 		{ "<leader>lm", ":Laravel related<cr>" },
-	-- 	},
-	-- 	event = { "VeryLazy" },
-	-- 	opts = {
-	-- 		lsp_server = "intelephense",
-	-- 	},
-	-- 	config = true,
-	-- },
 }

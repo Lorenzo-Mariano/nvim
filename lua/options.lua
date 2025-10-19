@@ -1,4 +1,4 @@
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- turn off entering comments when entering new line

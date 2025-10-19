@@ -1,30 +1,25 @@
 return {
-	-- {
-	-- 	"tribela/transparent.nvim",
-	-- 	event = "VimEnter",
-	-- 	config = true,
-	-- 	opts = {
-	-- 		extra_groups = { "WinSeparator" },
-	-- 	},
-	-- },
+	{
+		"tribela/transparent.nvim",
+		cmd = { "TransparentEnable", "TransparentDisable" },
+		config = true,
+		opts = {
+			extra_groups = { "WinSeparator" },
+		},
+	},
 	{
 		"tinted-theming/tinted-vim",
 		config = function()
 			-- ol' reliable
-			vim.cmd.colorscheme("gruvbox-material")
-			-- vim.cmd.colorscheme("base16-gruvbox-material-dark-hard")
-			-- vim.cmd.colorscheme("base16-gruvbox-dark-hard")
-			-- vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
+			-- vim.cmd.colorscheme("gruvbox-material")
 
-			-- vim.cmd.colorscheme("base16-ayu-mirage") -- for mori
-			-- vim.cmd.colorscheme("base16-sandcastle") -- for mori
-			-- vim.cmd.colorscheme("base16-everforest-dark-hard") -- for mori
-
-			-- vim.cmd.colorscheme("base16-tomorrow-night-eighties")
+			-- for mori
+			-- vim.cmd.colorscheme("base16-ayu-mirage")
+			-- vim.cmd.colorscheme("base16-sandcastle")
 
 			-- Other themes
 			-- vim.cmd.colorscheme("base16-phd") -- for furina blue
-			-- vim.cmd.colorscheme("base16-horizon-dark") -- for calli pink
+			vim.cmd.colorscheme("base16-horizon-dark") -- for calli pink
 
 			-- below doesn't work for some reason. taken straight from the docs.
 			-- (hence the plugin above)

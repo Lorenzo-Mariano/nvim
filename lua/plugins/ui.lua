@@ -28,10 +28,10 @@ return {
 				options = {
 					globalstatus = true,
 				},
-				tabline = {
-					lualine_a = { "buffers" },
-					lualine_z = { "tabs" },
-				},
+				-- tabline = {
+				-- 	lualine_a = { "buffers" },
+				-- 	lualine_z = { "tabs" },
+				-- },
 				sections = {
 					lualine_c = {
 						{
@@ -71,14 +71,14 @@ return {
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	-- {
-	-- 	"sphamba/smear-cursor.nvim",
-	-- 	opts = {
-	-- 		stiffness = 0.9,
-	-- 		trailing_stiffness = 0.5,
-	-- 		distance_stop_animating = 0.1,
-	-- 	},
-	-- },
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {
+			stiffness = 0.9,
+			trailing_stiffness = 0.5,
+			distance_stop_animating = 0.1,
+		},
+	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",

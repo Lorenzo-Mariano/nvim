@@ -33,10 +33,10 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
 -- Move focus
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-j>", "<C-w>j", opts)
+-- map("n", "<C-h>", "<C-w>h", opts)
+-- map("n", "<C-l>", "<C-w>l", opts)
+-- map("n", "<C-k>", "<C-w>k", opts)
+-- map("n", "<C-j>", "<C-w>j", opts)
 
 -- Move splits around
 map("n", "<leader>H", "<C-w>H", opts)
@@ -50,11 +50,11 @@ map("n", "<leader>l", ":bnext<CR>", opts)
 map("n", "<leader>h", ":bprevious<CR>", opts)
 
 -- Scroll 10 lines, normal and visual, then center cursor
-vim.api.nvim_set_keymap("n", "<C-U>", "10kzz", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-D>", "10jzz", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("v", "<C-U>", "10kzz", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<C-D>", "10jzz", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-U>", "10kzz", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-D>", "10jzz", { noremap = true, silent = true })
+--
+-- vim.api.nvim_set_keymap("v", "<C-U>", "10kzz", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("v", "<C-D>", "10jzz", { noremap = true, silent = true })
 
 -- experimental fold stuff
 vim.api.nvim_set_keymap("n", "zf", "v%zfzz", { noremap = true, silent = true })

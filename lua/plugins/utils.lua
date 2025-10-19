@@ -36,7 +36,9 @@ return {
 		},
 		config = function()
 			require("CopilotChat").setup({
-				model = "claude-3.7-sonnet", -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
+				-- https://docs.github.com/en/copilot/reference/ai-models/model-comparison
+				-- model = "claude-3.7-sonnet", -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
+				model = "gpt-5-mini",
 				selection = function(source)
 					local select = require("CopilotChat.select")
 					return select.visual(source)
@@ -204,6 +206,13 @@ return {
 					current = "GitConflictCurrent",
 				},
 			})
+		end,
+	},
+	{
+		"FabijanZulj/blame.nvim",
+		lazy = false,
+		config = function()
+			require("blame").setup({})
 		end,
 	},
 }

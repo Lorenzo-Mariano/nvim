@@ -39,12 +39,9 @@ return {
 					php = { "pint" },
 					blade = { "blade-formatter" },
 				},
-				format_after_save = function(bufnr)
-					if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-						return
-					end
-					return { lsp_format = "fallback" }
-				end,
+				format_after_save = {
+					lsp_format = "fallback",
+				},
 				-- format_on_save = {
 				-- 	timeout_ms = 1400,
 				-- },

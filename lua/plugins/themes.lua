@@ -1,18 +1,26 @@
 return {
-	{
-		"tribela/transparent.nvim",
-		event = "VimEnter",
-		config = true,
-		opts = {
-			extra_groups = { "WinSeparator" }, -- Clear NeoTree border
-		},
-	},
+	-- {
+	-- 	"tribela/transparent.nvim",
+	-- 	event = "VimEnter",
+	-- 	config = true,
+	-- 	opts = {
+	-- 		extra_groups = { "WinSeparator" },
+	-- 	},
+	-- },
 	{
 		"tinted-theming/tinted-vim",
 		config = function()
+			-- ol' reliable
+			vim.cmd.colorscheme("gruvbox-material")
+			-- vim.cmd.colorscheme("base16-gruvbox-material-dark-hard")
+			-- vim.cmd.colorscheme("base16-gruvbox-dark-hard")
+			-- vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
+
 			-- vim.cmd.colorscheme("base16-ayu-mirage") -- for mori
 			-- vim.cmd.colorscheme("base16-sandcastle") -- for mori
-			vim.cmd.colorscheme("base16-everforest-dark-hard") -- for mori
+			-- vim.cmd.colorscheme("base16-everforest-dark-hard") -- for mori
+
+			-- vim.cmd.colorscheme("base16-tomorrow-night-eighties")
 
 			-- Other themes
 			-- vim.cmd.colorscheme("base16-phd") -- for furina blue

@@ -26,8 +26,17 @@ vim.opt.autoindent = true
 -- When wrapping a long line, keep indentation
 vim.opt.breakindent = true
 
--- When scrolling, keeps the cursor a lil' more centered
--- commented because of change to <C-D> and <C-U> keybinds
--- vim.opt.scrolloff = 8
+-- Show where folds have been made
+vim.opt.foldcolumn = "1"
 
 vim.opt.termguicolors = true
+
+-- Use spaces instead of tabs
+vim.opt.expandtab = true
+
+-- Set tab width to 4 spaces
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
+-- When pressing <Tab> in insert mode, insert spaces instead of a tab character
+vim.opt.softtabstop = 4

@@ -28,10 +28,10 @@ return {
 				options = {
 					globalstatus = true,
 				},
-				-- tabline = {
-				-- 	lualine_a = { "buffers" },
-				-- 	lualine_z = { "tabs" },
-				-- },
+				tabline = {
+					lualine_a = { "buffers" },
+					lualine_z = { "tabs" },
+				},
 				sections = {
 					lualine_c = {
 						{

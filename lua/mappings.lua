@@ -15,12 +15,7 @@ vim.keymap.set("n", "ge", vim.diagnostic.open_float, { noremap = true, silent = 
 vim.api.nvim_set_keymap("v", "y", '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "yy", '"+yy', { noremap = true, silent = true })
 
--- Use spaces instead of tabs
-vim.opt.expandtab = true
-
--- Set tab width to 4 spaces
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-
--- When pressing <Tab> in insert mode, insert spaces instead of a tab character
-vim.opt.softtabstop = 4
+-- Pick buffers rq
+vim.api.nvim_set_keymap("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>h", ":bp<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>l", ":bn<CR>", { noremap = true, silent = true })

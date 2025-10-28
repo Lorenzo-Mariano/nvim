@@ -8,6 +8,11 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- Makes it so that there is only one statusline for the whole window
 vim.o.laststatus = 3
 
+-- Don't change caret style based on mode.
+-- This makes it more like normal vim.
+-- Encourages looking at the status thingy.
+vim.opt.guicursor = ""
+
 -- Makes searching not case sensitive
 vim.opt.ignorecase = true
 

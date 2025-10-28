@@ -65,47 +65,12 @@ return {
 		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
-		dependencies = { "neovim/nvim-lspconfig" },
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
-				automatic_installation = true,
-			})
-
-			require("mason-lspconfig").setup_handlers({
-				function(server_name)
-					require("lspconfig")[server_name].setup({})
-				end,
-
-				["lua_ls"] = function()
-					require("lspconfig").lua_ls.setup({
-						settings = {
-							Lua = {
-								diagnostics = { globals = { "vim" } },
-							},
-						},
-					})
-				end,
-
-				["omnisharp"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.omnisharp.setup({
-						cmd = {
-							"dotnet",
-							vim.fn.expand(
-								"C:/Users/Nyormensho/AppData/Local/nvim-data/mason/packages/omnisharp/libexec/OmniSharp.dll"
-							),
-						},
-						root_dir = lspconfig.util.root_pattern("*.sln", ".git"),
-						settings = {
-							RoslynExtensionsOptions = { EnableImportCompletion = true },
-							MsBuild = { LoadProjectsOnDemand = false },
-						},
-					})
-				end,
-			})
-		end,
+		"mason-org/mason-lspconfig.nvim",
+		opts = {},
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+			"neovim/nvim-lspconfig",
+		},
 	},
 	{
 		"mfussenegger/nvim-lint",
@@ -177,7 +142,8 @@ return {
 		"akinsho/toggleterm.nvim",
 		version = "*",
 		opts = {
-			shell = "pwsh -nologo",
+			-- shell = "pwsh -nologo",
+			shell = "bash",
 			direction = "float",
 			open_mapping = "<A-\\>",
 		},

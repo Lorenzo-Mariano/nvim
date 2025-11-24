@@ -14,7 +14,6 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
-		event = "InsertEnter",
 		config = function()
 			require("copilot").setup({
 				filetypes = {
@@ -30,6 +29,7 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		cmd = "CopilotChat",
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" },
 			{ "nvim-lua/plenary.nvim", branch = "master" },
@@ -80,7 +80,6 @@ return {
 			lint.linters_by_ft = {
 				-- configs
 				yaml = { "yamllint" },
-				sh = { "dotenv_linter" },
 
 				-- programming
 				javascript = { "eslint_d" },

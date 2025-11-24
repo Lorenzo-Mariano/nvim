@@ -1,5 +1,29 @@
 return {
 	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
+	{
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup({
+				mappings = { "<C-u>", "<C-d>" },
+				duration_multiplier = 0.5,
+				easing = "quadratic",
+			})
+		end,
+	},
+	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
 			local function get_configured_linters()
@@ -26,6 +50,7 @@ return {
 
 			require("lualine").setup({
 				options = {
+					-- theme = "onedark", -- like helix
 					globalstatus = true,
 				},
 				tabline = {
@@ -50,7 +75,7 @@ return {
 					},
 					lualine_x = {
 						function()
-							local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+							local clients = vim.lsp.get_clients({ bufnr = 0 })
 							if #clients == 0 then
 								return "No LSP"
 							end

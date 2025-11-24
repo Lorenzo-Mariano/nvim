@@ -19,3 +19,6 @@ vim.api.nvim_set_keymap("n", "yy", '"+yy', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>h", ":bp<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>l", ":bn<CR>", { noremap = true, silent = true })
+
+-- Toggle transparent background
+vim.api.nvim_set_keymap("n", "<leader>tt", ":TransparentToggle<CR>", { noremap = true, silent = true })

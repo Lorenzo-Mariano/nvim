@@ -96,43 +96,33 @@ return {
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	-- {
+	-- 	"sphamba/smear-cursor.nvim",
+	-- 	opts = {
+	-- 		stiffness = 0.9,
+	-- 		trailing_stiffness = 0.5,
+	-- 		distance_stop_animating = 0.1,
+	-- 	},
+	-- },
 	{
-		"sphamba/smear-cursor.nvim",
-		opts = {
-			stiffness = 0.9,
-			trailing_stiffness = 0.5,
-			distance_stop_animating = 0.1,
-		},
-	},
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
+		"mikavilpas/yazi.nvim",
+		version = "*",
+		event = "VeryLazy",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
+			{ "nvim-lua/plenary.nvim", lazy = true },
 		},
-		-- lazy = false,
-
-		config = function()
-			require("neo-tree").setup({
-				default_component_configs = {
-					indent = {
-						indent_size = 4,
-					},
-				},
-				window = {
-					width = 70,
-					mappings = {
-						["<c-b>"] = "noop",
-					},
-				},
-			})
-
-			local map = vim.api.nvim_set_keymap
-			-- map("n", "<C-b>", ":Neotree toggle position=float<CR>", { noremap = true, silent = true })
-			map("n", "<C-b>", ":Neotree toggle<CR>", { noremap = true, silent = true })
-		end,
+		keys = {
+			{
+				"<C-b>",
+				"<cmd>Yazi cwd<cr>",
+			},
+		},
+		opts = {
+			open_for_directories = false,
+			keymaps = {
+				show_help = "<f1>",
+			},
+		},
 	},
 	{
 		"folke/noice.nvim",
@@ -162,11 +152,5 @@ return {
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
-	},
-	{
-		"brenoprata10/nvim-highlight-colors",
-		config = function()
-			require("nvim-highlight-colors").setup({})
-		end,
 	},
 }

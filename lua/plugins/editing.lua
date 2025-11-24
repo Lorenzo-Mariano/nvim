@@ -26,11 +26,13 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
+					rust = { "rustfmt" },
 					javascript = { "prettierd" },
 					typescript = { "prettierd" },
 					typescriptreact = { "prettierd" },
 					yaml = { "prettierd" },
 					json = { "prettierd" },
+					toml = { "tombi" },
 					css = { "prettierd" },
 					cs = { "csharpier" },
 
@@ -128,4 +130,24 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
+	{
+		"brenoprata10/nvim-highlight-colors",
+		config = function()
+			require("nvim-highlight-colors").setup({})
+		end,
+	},
+	{
+		"brianhuster/live-preview.nvim",
+		opts = {
+			browser = "zen-browser --new-window",
+		},
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+	},
+	-- {
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	version = "^6", -- Recommended
+	-- 	lazy = false, -- This plugin is already lazy
+	-- },
 }

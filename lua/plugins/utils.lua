@@ -115,17 +115,20 @@ return {
 	{ "nvim-telescope/telescope-ui-select.nvim" },
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		tag = "v0.1.9",
 		cmd = "Telescope",
 		lazy = false,
-		opts = {
-			defaults = {
-				layout_config = {
-					preview_width = 0.5,
-				},
-			},
-		},
 		config = function()
+			require("telescope").setup({
+				defaults = {
+					layout_strategy = "horizontal",
+					layout_config = {
+						width = 0.9,
+						preview_width = 0.6,
+					},
+				},
+			})
+
 			require("telescope").load_extension("ui-select")
 
 			local builtin = require("telescope.builtin")
@@ -134,6 +137,7 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 			vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "Telescope select theme" })
+			vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "Telescope marks" })
 		end,
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},

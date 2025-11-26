@@ -87,11 +87,6 @@ return {
 				javascriptreact = { "eslint_d" },
 				typescriptreact = { "eslint_d" },
 				python = { "pylint" },
-
-				-- styles
-				css = { "stylelint" },
-				scss = { "stylelint" },
-				sass = { "stylelint" },
 			}
 
 			-- Wrap and override eslint_d parser to suppress config file missing error

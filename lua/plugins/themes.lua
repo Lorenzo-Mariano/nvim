@@ -1,7 +1,7 @@
 return {
 	{
 		"tribela/transparent.nvim",
-		cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
+		-- cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
 		config = true,
 		opts = {
 			extra_groups = { "WinSeparator", "FoldColumn" },
@@ -11,14 +11,18 @@ return {
 		"tinted-theming/tinted-vim",
 		config = function()
 			-- ol' reliable
-			vim.cmd.colorscheme("base16-gruvbox-material-dark-hard")
+			-- vim.cmd.colorscheme("base16-gruvbox-material-dark-hard")
 
 			-- this is like helix!
 			-- vim.cmd.colorscheme("base16-material-palenight")
 
+			-- for winter background
+			-- vim.cmd.colorscheme("base16-nord")
+
 			-- for mori
 			-- Also good for emudotto. Vibrant green strings.
 			-- vim.cmd.colorscheme("base16-ayu-mirage")
+			-- vim.cmd.colorscheme("base16-rose-pine-moon")
 
 			-- this one and below are lower contrast, and colors still fit rather well.
 			-- vim.cmd.colorscheme("base16-sandcastle")
@@ -31,6 +35,14 @@ return {
 			-- below doesn't work for some reason. taken straight from the docs.
 			-- (hence the plugin above)
 			-- vim.g.tinted_background_transparent = true
+		end,
+	},
+	{
+		"anAcc22/sakura.nvim",
+		dependencies = "rktjmp/lush.nvim",
+		config = function()
+			vim.opt.background = "dark" -- or "light"
+			vim.cmd("colorscheme sakura") -- sets the colorscheme
 		end,
 	},
 	-- {

@@ -1,29 +1,5 @@
 return {
 	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {},
-		keys = {
-			{
-				"<leader>?",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
-	},
-	{
-		"karb94/neoscroll.nvim",
-		config = function()
-			require("neoscroll").setup({
-				mappings = { "<C-u>", "<C-d>" },
-				duration_multiplier = 0.5,
-				easing = "quadratic",
-			})
-		end,
-	},
-	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
 			local function get_configured_linters()
@@ -36,7 +12,7 @@ return {
 				local configured = lint.linters_by_ft[ft]
 
 				if not configured or #configured == 0 then
-					return "󰦕  No Linter"
+					return "No Linter"
 				end
 
 				if type(configured) == "string" then
@@ -50,12 +26,16 @@ return {
 
 			require("lualine").setup({
 				options = {
-					-- theme = "onedark", -- like helix
 					globalstatus = true,
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
 				},
+				-- I'm getting comfy with tmux and therefore also configging it.
+				-- Let's see what it's like to live without this for a while.
+				-- Still keeping the binds to switch buffers though.
 				tabline = {
-					lualine_a = { "buffers" },
-					lualine_z = { "tabs" },
+					-- lualine_a = { "buffers" },
+					-- lualine_z = { "tabs" },
 				},
 				sections = {
 					lualine_c = {
@@ -74,15 +54,8 @@ return {
 						},
 					},
 					lualine_x = {
-						function()
-							local clients = vim.lsp.get_clients({ bufnr = 0 })
-							if #clients == 0 then
-								return "No LSP"
-							end
-							return clients[1].name
-						end,
+						"lsp_status",
 						get_configured_linters,
-						"encoding",
 						"filetype",
 					},
 				},
@@ -123,6 +96,30 @@ return {
 				show_help = "<f1>",
 			},
 		},
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
+	{
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup({
+				mappings = { "<C-u>", "<C-d>" },
+				duration_multiplier = 0.5,
+				easing = "quadratic",
+			})
+		end,
 	},
 	{
 		"folke/noice.nvim",

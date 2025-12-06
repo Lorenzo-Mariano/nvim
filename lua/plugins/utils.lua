@@ -87,6 +87,7 @@ return {
 				javascriptreact = { "eslint_d" },
 				typescriptreact = { "eslint_d" },
 				python = { "pylint" },
+				markdown = { "rumdl" },
 			}
 
 			-- Wrap and override eslint_d parser to suppress config file missing error

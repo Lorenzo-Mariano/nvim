@@ -32,9 +32,11 @@ return {
 					typescriptreact = { "prettierd" },
 					yaml = { "prettierd" },
 					json = { "prettierd" },
-					toml = { "tombi" },
+					toml = { "prettierd" },
 					css = { "prettierd" },
 					cs = { "csharpier" },
+					markdown = { "prettierd" },
+					sh = { "shfmt" },
 
 					-- Installed globally via composer, not mason.
 					-- I'm facing problems because "composer.bat is not executable" <- mason
